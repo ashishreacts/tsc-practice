@@ -75,9 +75,7 @@ const result10: number[] = arr10.map((value: Item) => value.x);
 console.log(result10);
 
 // 11.
-type PersonWithAge = {
-  id: number;
-  name: string;
+type PersonWithAge= Person & {
   age: number;
 }
 
