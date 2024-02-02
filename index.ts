@@ -221,3 +221,43 @@ type PersonWithCity={
   }, {});
   
   console.log(result23);
+
+// 24
+type Data = {
+  id: number;
+  tags: string[];
+};
+
+const arr24: Data[] = [
+  { id: 1, tags: ['a', 'b'] },
+  { id: 2, tags: ['b', 'c'] },
+];
+
+const result24: string[] = Array.from(
+  new Set(arr24.flatMap(obj => obj.tags))
+);
+
+console.log(result24);
+
+// 25
+type PersonData = {
+  name: string;
+  age: number;
+};
+
+const arr25: PersonData[] = [
+  { name: 'Alice', age: 25 },
+  { name: 'Bob', age: 30 },
+  { name: 'Charlie', age: 20 },
+];
+
+const result25: PersonData[] = arr25.sort((a, b) => {
+  if (a.age !== b.age) {
+    return a.age - b.age;
+  }
+  return a.name.localeCompare(b.name);
+});
+
+console.log(result25);
+
+
